@@ -1,0 +1,32 @@
+
+.navdata{
+text-align: left;
+font-size: large;
+width: 70%;
+}
+.container {
+    width: 100%;
+}
+.form-data{
+    width: 30%;
+    height: 40%;
+}
+.data{
+    margin-left: 50px;
+    width: 70%;
+    height: auto;
+    text-align: center;
+
+}
+.register{
+    margin: 10px;
+    width:20%;
+    height: auto;
+    display:inline-block;
+    padding: 5px;
+   
+}
+.button{
+    text-align: center;
+    
+}
