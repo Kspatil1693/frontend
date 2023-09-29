@@ -15,7 +15,7 @@ const AgentLogout = () => {
     const handleSubmit = async (e) => { 
         e.preventDefault();
         const { email, phoneNumber, mpin } = data;
-        const response = await fetch("https://crawford-gmwe.onrender.com/agent/logout", {
+        const response = await fetch("https://crawford-79w2.onrender.com/agent/logout", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

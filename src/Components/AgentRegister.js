@@ -41,7 +41,7 @@ const AgentRegister = () => {
             email,password1, adharCard, panCard, buildingName, flatNumber,
             streetName, pinCode } = data;
         
-        const response = await fetch("https://crawford-gmwe.onrender.com/agent/register", {
+        const response = await fetch("https://crawford-79w2.onrender.com/agent/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

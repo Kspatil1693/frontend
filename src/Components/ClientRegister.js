@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const ClientRegister = () => {
-  
+      const navigate = useNavigate();
     const [data, setData] = useState({
         firstName: '',
         middleName: '',
@@ -16,7 +16,8 @@ const ClientRegister = () => {
         buildingName: '',
         flatNumber: '',
         streetName: '',
-        pinCode: '',
+      pinCode: '',
+        agentPhoneNumber:''
     
     })
     const handleInput = (event) => { 
@@ -36,9 +37,9 @@ const ClientRegister = () => {
         const { firstName, middleName, lastName,
             phoneNumber, whatsAppNumber, alternativeNumber,
             email,password1, adharCard, panCard, buildingName, flatNumber,
-            streetName, pinCode } = data;
+            streetName, pinCode,agentPhoneNumber } = data;
         
-        const response = await fetch("https://crawford2u.onrender.com/client/clientregister", {
+        const response = await fetch("https://crawford-79w2.onrender.com/client/clientregister", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -57,7 +58,8 @@ const ClientRegister = () => {
                 buildingName: buildingName,
                 flatNumber: flatNumber,
                 streetName: streetName,
-                pinCode: pinCode,
+              pinCode: pinCode,
+                agentPhoneNumber:agentPhoneNumber
                           })
         });
         const result = await response.json();
@@ -69,9 +71,9 @@ const ClientRegister = () => {
         else { 
              window.alert("Registeration Successfully");
             console.log("Successfully Registration");
-            
+             navigate('/clientLogin');
       }
-      await response.send("/agentLogin");
+      
     }
 
   return (
@@ -162,6 +164,12 @@ const ClientRegister = () => {
                 <label htmlFor="PincodeId" className="form-label">
                     Pincode</label>
                       <input type="text" name="pinCode" className="form-control" id="PincodeId" //autocomplete="off"
+                       onChange={handleInput }/>
+          </div>
+          <div className="mb-1 register">
+                <label htmlFor="agentPhoneNumberId" className="form-label">
+                    agentPhoneNumber</label>
+                      <input type="text" name="agentPhoneNumber" className="form-control" id="agentPhoneNumberId" //autocomplete="off"
                        onChange={handleInput }/>
                   </div>
                   
